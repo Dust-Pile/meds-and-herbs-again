@@ -1,0 +1,440 @@
+{
+  "parent": "minecraft:item/generated",
+  "overrides": [
+    {
+      "model": "meds_and_herbs:medicine/adrenaline_bottle_2",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 0.1
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/adrenaline_bottle_1",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 0.2
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/adrenaline_bottle_0",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 0.3
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/adrenaline_blood_bottle_2",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 1.1
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/adrenaline_blood_bottle_1",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 1.2
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/adrenaline_blood_bottle_0",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 1.3
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/aloe_bottle_2",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 2.1
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/aloe_bottle_1",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 2.2
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/aloe_bottle_0",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 2.3
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/antidote_bottle_2",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 3.1
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/antidote_bottle_1",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 3.2
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/antidote_bottle_0",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 3.3
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/artemisia_bottle_2",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 4.1
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/artemisia_bottle_1",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 4.2
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/artemisia_bottle_0",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 4.3
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/belladonna_bottle_2",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 5.1
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/belladonna_bottle_1",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 5.2
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/belladonna_bottle_0",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 5.3
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/belladonna_poison_bottle_2",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 6.1
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/belladonna_poison_bottle_1",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 6.2
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/belladonna_poison_bottle_0",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 6.3
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/blood_bottle_2",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 8.1
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/blood_bottle_1",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 8.2
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/blood_bottle_0",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 8.3
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/caffeine_bottle_2",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 9.1
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/caffeine_bottle_1",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 9.2
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/caffeine_bottle_0",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 9.3
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/chamomile_bottle_2",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 10.1
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/chamomile_bottle_1",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 10.2
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/chamomile_bottle_0",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 10.3
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/ethanol_bottle_2",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 11.1
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/ethanol_bottle_1",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 11.2
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/ethanol_bottle_0",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 11.3
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/glucose_bottle_2",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 12.1
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/glucose_bottle_1",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 12.2
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/glucose_bottle_0",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 12.3
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/herbal_bottle_2",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 13.1
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/herbal_bottle_1",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 13.2
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/herbal_bottle_0",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 13.3
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/high_potency_antidote_bottle_2",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 14.1
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/high_potency_antidote_bottle_1",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 14.2
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/high_potency_antidote_bottle_0",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 14.3
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/high_potency_poison_blood_bottle_2",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 16.1
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/high_potency_poison_blood_bottle_1",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 16.2
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/high_potency_poison_blood_bottle_0",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 16.3
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/methanol_bottle_2",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 17.1
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/methanol_bottle_1",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 17.2
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/methanol_bottle_0",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 17.3
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/morphine_bottle_2",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 18.1
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/morphine_bottle_1",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 18.2
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/morphine_bottle_0",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 18.3
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/mushroom_bottle_2",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 19.1
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/mushroom_bottle_1",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 19.2
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/mushroom_bottle_0",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 19.3
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/opium_bottle_2",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 20.1
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/opium_bottle_1",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 20.2
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/opium_bottle_0",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 20.3
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/penicillin_bottle_2",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 21.1
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/penicillin_bottle_1",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 21.2
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/penicillin_bottle_0",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 21.3
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/poison_bottle_2",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 22.1
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/poison_bottle_1",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 22.2
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/poison_bottle_0",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 22.3
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/poison_blood_bottle_2",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 23.1
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/poison_blood_bottle_1",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 23.2
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/poison_blood_bottle_0",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 23.3
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/sweet_clover_bottle_2",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 24.1
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/sweet_clover_bottle_1",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 24.2
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/sweet_clover_bottle_0",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 24.3
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/vinca_bottle_2",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 25.1
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/vinca_bottle_1",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 25.2
+      }
+    },
+    {
+      "model": "meds_and_herbs:medicine/vinca_bottle_0",
+      "predicate": {
+        "meds_and_herbs:medicine_state": 25.3
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "meds_and_herbs:item/medicine/medicine_bottle_2"
+  }
+}
