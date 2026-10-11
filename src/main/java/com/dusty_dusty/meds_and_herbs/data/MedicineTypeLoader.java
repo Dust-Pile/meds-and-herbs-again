@@ -14,7 +14,7 @@ import java.util.*;
 
 public class MedicineTypeLoader extends SimpleJsonResourceReloadListener {
     public static final MedicineTypeLoader INSTANCE = new MedicineTypeLoader();
-    private static final Map<ResourceLocation, MedicineDefinition> definitions = new HashMap<>();
+    private static final Map<ResourceLocation, MedicineDefinition> DEFINITIONS = new LinkedHashMap<>();
 
     private MedicineTypeLoader() {
         super(new GsonBuilder().setPrettyPrinting().create(), "medicine_types");
@@ -22,7 +22,8 @@ public class MedicineTypeLoader extends SimpleJsonResourceReloadListener {
 
     @Override
     protected void apply(@Nonnull Map<ResourceLocation, JsonElement> entries, @Nonnull ResourceManager manager, @Nonnull ProfilerFiller profiler) {
-        definitions.clear();
+        DEFINITIONS.clear();
+        sortedIds = null;
         parseEntries(entries);
     }
 
@@ -37,7 +38,7 @@ public class MedicineTypeLoader extends SimpleJsonResourceReloadListener {
                 var functionPath = Optional.of(ResourceLocation.parse(json.get("function").getAsString()));
                 List<ResourceLocation> cures = parseCures(json.getAsJsonArray("cures"));
                 var def = new MedicineDefinition(id, nameKey, type, color, functionPath, cures);
-                definitions.put(id, def);
+                DEFINITIONS.put(id, def);
             } catch (Exception e) {
                 MedsAndHerbs.LOGGER.error("Failed to load medicine type {}", entry.getKey(), e);
             }
@@ -60,11 +61,25 @@ public class MedicineTypeLoader extends SimpleJsonResourceReloadListener {
         return list;
     }
 
+    private static List<ResourceLocation> sortedIds = null;
+
+    private static List<ResourceLocation> getSortedIds() {
+        if (sortedIds == null) {
+            sortedIds = DEFINITIONS.keySet().stream().sorted().toList();
+        }
+        return sortedIds;
+    }
+
+
+    public static int indexOf(ResourceLocation id) {
+        return getSortedIds().indexOf(id);
+    }
+
     public static MedicineDefinition get(ResourceLocation id) {
-        return definitions.get(id);
+        return DEFINITIONS.get(id);
     }
 
     public static Collection<MedicineDefinition> getAllDefinitions() {
-        return definitions.values();
+        return DEFINITIONS.values();
     }
 }

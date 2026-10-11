@@ -7,8 +7,10 @@ import com.dusty_dusty.meds_and_herbs.init.MHItems;
 import com.dusty_dusty.meds_and_herbs.item.Medicine;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
+import net.minecraftforge.client.event.TextureStitchEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -33,9 +35,12 @@ public class ClientModEvents {
     public static void onClientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
             ItemProperties.register(MHItems.MEDICINE.get(),
-                    ResourceLocation.parse("meds_and_herbs:uses"),
-                    (stack, level, entity, seed) -> Medicine.getUses(stack)
-            );
+                    MedsAndHerbs.id("medicine_state"),
+                    (stack, level, entity, seed) -> {
+                        int typeIndex = MedicineTypeLoader.indexOf(Medicine.getType(stack));
+                        int uses = Medicine.getUses(stack);
+                        return typeIndex + uses / 10.0f;
+                    });
         });
     }
 }
