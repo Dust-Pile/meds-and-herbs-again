@@ -8,25 +8,27 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import java.util.HashMap;
+import java.util.Comparator;
 import java.util.Map;
+import java.util.PriorityQueue;
 import java.util.function.BooleanSupplier;
 
 @Mixin(ServerLevel.class)
 public abstract class ServerLevelMixin implements ServerLevelRuns {
-    @Unique
-    private static final Map<Integer, Runnable> medsAndHerbsAgain$scheduledTasks = new HashMap<>();
+    @Unique // Tested for proper ordering
+    private static final PriorityQueue<Map.Entry<Integer, Runnable>> medsAndHerbsAgain$scheduledTasks =
+            new PriorityQueue<>( Comparator.comparingInt( Map.Entry::getKey) );
 
     @Inject(method = "tick", at = @At("TAIL"))
     public void medsAndHerbsAgain$tickTask(BooleanSupplier hasTimeLeft, CallbackInfo ci) {
         ServerLevel self = (ServerLevel) (Object) this;
         int currentTick = self.getServer().getTickCount();
 
-        for (Integer tick : medsAndHerbsAgain$scheduledTasks.keySet().toArray(new Integer[0])) {
-            if (tick <= currentTick) {
-                Runnable task = medsAndHerbsAgain$scheduledTasks.remove(tick);
-                if (task != null) task.run();
-            }
+        while (!medsAndHerbsAgain$scheduledTasks.isEmpty()
+                && medsAndHerbsAgain$scheduledTasks.peek().getKey() <= currentTick
+        ) {
+            Runnable task = medsAndHerbsAgain$scheduledTasks.poll().getValue();
+            if (task != null) task.run();
         }
     }
 
@@ -35,6 +37,6 @@ public abstract class ServerLevelMixin implements ServerLevelRuns {
     public void medsAndHerbsAgain$addServerLevelRun(int tickLimit, Runnable run) {
         ServerLevel self = (ServerLevel) (Object) this;
         int executeAtTick = self.getServer().getTickCount() + tickLimit;
-        medsAndHerbsAgain$scheduledTasks.put(executeAtTick, run);
+        medsAndHerbsAgain$scheduledTasks.offer( Map.entry( executeAtTick, run ) );
     }
 }

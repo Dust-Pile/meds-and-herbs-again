@@ -25,22 +25,22 @@ public class MedsAndHerbs {
         return ResourceLocation.fromNamespaceAndPath(MODID, path);
     }
 
-    public MedsAndHerbs() {
-        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+    public MedsAndHerbs(FMLJavaModLoadingContext context) {
+        IEventBus modEventBus = context.getModEventBus();
 
-        MHSounds.REGISTRY.register(bus);
-        MHBlocks.REGISTRY.register(bus);
-        MHBlockEntities.REGISTRY.register(bus);
-        MHRecipes.SERIALIZERS.register(bus);
-        MHRecipes.TYPES.register(bus);
-        MHItems.REGISTRY.register(bus);
-        MHItems.ITEMS.register(bus);
-        MHEffects.REGISTRY.register(bus);
-        MHVillagerProfessions.POI_TYPES.register(bus);
-        MHVillagerProfessions.PROFESSIONS.register(bus);
-        MHMenus.REGISTRY.register(bus);
-        MHCreativeTabs.REGISTRY.register(bus);
-        bus.register(this);
+        MHSounds.REGISTRY.register(modEventBus);
+        MHBlocks.REGISTRY.register(modEventBus);
+        MHBlockEntities.REGISTRY.register(modEventBus);
+        MHRecipes.SERIALIZERS.register(modEventBus);
+        MHRecipes.TYPES.register(modEventBus);
+        MHItems.REGISTRY.register(modEventBus);
+        MHItems.ITEMS.register(modEventBus);
+        MHEffects.REGISTRY.register(modEventBus);
+        MHVillagerProfessions.POI_TYPES.register(modEventBus);
+        MHVillagerProfessions.PROFESSIONS.register(modEventBus);
+        MHMenus.REGISTRY.register(modEventBus);
+        MHCreativeTabs.REGISTRY.register(modEventBus);
+        modEventBus.register(this);
     }
 
     @SubscribeEvent
@@ -54,6 +54,7 @@ public class MedsAndHerbs {
         );
     }
 
+    @SuppressWarnings("DataFlowIssue")
     @SubscribeEvent
     public void onCommonSetup(FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {

@@ -10,33 +10,32 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+import java.util.Objects;
+
 @Mixin(LivingEntity.class)
 public class LivingEntityMixin {
 
-    @Inject(
-            method = "getDamageAfterMagicAbsorb",
-            at = @At("HEAD"),
-            cancellable = true,
-            remap = false
-    )
-    private void customMagicDamageReduction(DamageSource source, float amount,
-                                            CallbackInfoReturnable<Float> cir) {
+    @Inject( method = "getDamageAfterMagicAbsorb",
+            at = @At("HEAD"), cancellable = true )
+    private void medsAndHerbsAgain$customMagicDamageReduction(DamageSource damageSource, float damageAmount,
+        CallbackInfoReturnable<Float> cir
+    ) {
         LivingEntity self = (LivingEntity) (Object) this;
 
-        if (source.is(DamageTypeTags.BYPASSES_EFFECTS)) {
-            cir.setReturnValue(amount);
+        if (damageSource.is(DamageTypeTags.BYPASSES_EFFECTS)) {
+            cir.setReturnValue(damageAmount);
             return;
         }
 
         int resistLevel = 0;
         if (self.hasEffect(MobEffects.DAMAGE_RESISTANCE)
-                && !source.is(DamageTypeTags.BYPASSES_RESISTANCE)) {
-            resistLevel = self.getEffect(MobEffects.DAMAGE_RESISTANCE).getAmplifier() + 1;
+                && !damageSource.is(DamageTypeTags.BYPASSES_RESISTANCE)) {
+            resistLevel = Objects.requireNonNull(self.getEffect(MobEffects.DAMAGE_RESISTANCE)).getAmplifier() + 1;
         }
 
         int bleedLevel = 0;
         if (self.hasEffect(MHEffects.INTERNAL_BLEEDING.get())) {
-            bleedLevel = self.getEffect(MHEffects.INTERNAL_BLEEDING.get()).getAmplifier() + 1;
+            bleedLevel = Objects.requireNonNull(self.getEffect(MHEffects.INTERNAL_BLEEDING.get())).getAmplifier() + 1;
         }
 
         int effectiveLevel = resistLevel - bleedLevel;
@@ -44,6 +43,6 @@ public class LivingEntityMixin {
         float multiplier = 1.0F - 0.2F * effectiveLevel;
         if (multiplier < 0.0F) multiplier = 0.0F;
 
-        cir.setReturnValue(amount * multiplier);
+        cir.setReturnValue(damageAmount * multiplier);
     }
 }
